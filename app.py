@@ -24,5 +24,32 @@ My areas of interest lie in artificial intelligence, deep learning, and generati
 Additionally, I excel in full-stack software development using the Django framework.
 """)
 
+# GitHub Projects section
+st.header("Projects")
+username = 'dubemmmm'  # Replace with your GitHub username
+projects = fetch_github_projects(username)
+
+for project in projects:
+    st.subheader(project['name'])
+    st.write(project['description'])
+    st.write(f"[GitHub Link]({project['html_url']})")
+
+    if project['homepage']:
+        st.write(f"[Live Demo]({project['homepage']})")
+
+    st.write("---")
+
+# Contact section
+st.header("Contact")
+st.write("""
+Feel free to reach out to me through any of the following platforms:
+- [LinkedIn](https://www.linkedin.com/in/your-linkedin-profile)
+- [Twitter](https://twitter.com/your-twitter-handle)
+- [Email](mailto:your-email@example.com)
+""")
+
+# Footer
+st.write("© 2024 Your Name. All rights reserved.")
+
 
 
