@@ -6,7 +6,7 @@ import numpy as np
 model = joblib.load('iris_model.pkl')
 
 # Title of the app
-st.title("Iris Species Prediction App")
+st.title("Iris Speciesss Prediction App")
 
 # Input fields for the features
 sepal_length = st.number_input("Enter sepal length (cm)", value=0.0)
