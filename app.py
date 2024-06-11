@@ -1,27 +1,28 @@
 import streamlit as st
-import joblib
-import numpy as np
+import requests
+from PIL import Image
+from io import BytesIO
 
-# Load the pre-trained model
-model = joblib.load('iris_model.pkl')
+# Define a function to fetch and display GitHub projects
+def fetch_github_projects(username):
+    url = f'https://api.github.com/users/{username}/repos'
+    response = requests.get(url)
+    return response.json()
 
-# Title of the app
-st.title("Iris Speciesss Prediction App")
+# Header section
+st.title("My Portfolio")
+st.write("""
+Welcome to my portfolio! Here, you'll find a showcase of my projects, skills, and experiences.
+Feel free to explore and learn more about my work.
+""")
 
-# Input fields for the features
-sepal_length = st.number_input("Enter sepal length (cm)", value=0.0)
-sepal_width = st.number_input("Enter sepal width (cm)", value=0.0)
-petal_length = st.number_input("Enter petal length (cm)", value=0.0)
-petal_width = st.number_input("Enter petal width (cm)", value=0.0)
+# About section
+st.header("About Me")
+st.write("""
+I am a motivated and dynamic individual with a strong results-oriented approach and a keen eagerness to learn.
+My areas of interest lie in artificial intelligence, deep learning, and generative AI.
+Additionally, I excel in full-stack software development using the Django framework.
+""")
 
-# Button for making predictions
-if st.button("Predict"):
-    # Prepare the input data as a numpy array
-    input_data = np.array([[sepal_length, sepal_width, petal_length, petal_width]])
 
-    # Make predictions
-    prediction = model.predict(input_data)
-    species = ['setosa', 'versicolor', 'virginica']
 
-    # Display the prediction
-    st.write(f"The model predicts: {species[prediction[0]]}")
