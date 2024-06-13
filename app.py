@@ -85,19 +85,21 @@ elif option == "Skills":
 # Projects Section
 elif option == "Projects":
     st.header("Projects")
-    
-    # Fetch the pinned repositories from GitHub API
-    username = "dubemmmm"
-    token = "your_personal_access_token"  # Replace with your GitHub Personal Access Token
-    url = f"https://api.github.com/users/{username}/repos"
-    headers = {"Authorization": f"token {token}"}
-    
-    response = requests.get(url, headers=headers)
-    repos = response.json()
 
+    # Fetch and display pinned GitHub projects
+    st.subheader("Pinned GitHub Projects")
+    GITHUB_USERNAME = "dubemmmm"
+    
+    def get_pinned_repos(username):
+        url = f"https://api.github.com/users/{username}/repos?per_page=6"
+        response = requests.get(url)
+        repos = response.json()
+        return repos
+
+    repos = get_pinned_repos(GITHUB_USERNAME)
     for repo in repos:
-        if repo["pushed_at"]:  # Ensure the repo is not empty
-            st.subheader(repo["name"])
-            st.write(repo["description"])
-            st.markdown(f"[View Repository]({repo['html_url']})")
+        st.markdown(f"### [{repo['name']}]({repo['html_url']})")
+        st.markdown(f"**Description**: {repo['description']}")
+        st.markdown(f"**Technologies Used**: {repo['language']}")
+        st.markdown("---")
 
