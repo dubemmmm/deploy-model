@@ -59,7 +59,7 @@ if option == "Home":
     st.header("Welcome")
     st_lottie(icons["home"], height=200)
     st.write("I am a motivated and dynamic individual driven by a result-oriented approach and a keen eagerness to learn.")
-    st.image("images/profile.jpg", width=300)  # Add your image here
+     # Add your image here
 
     st.write("## Connect with me")
     st.markdown("[![LinkedIn](https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/your-profile/)")
