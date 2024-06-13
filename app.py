@@ -13,7 +13,7 @@ def get_pinned_repos(username):
     return repos
 
 # Load profile image
-profile_image = Image.open('')
+profile_image = Image.open('IMG_3489.JPG')
 
 # Sidebar - Profile image
 st.sidebar.image(profile_image, width=150)
