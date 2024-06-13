@@ -2,44 +2,7 @@ import streamlit as st
 import requests
 
 
-# Custom CSS for styling
-st.markdown("""
-    <style>
-    .main {
-        background-color: #f0f2f6;
-        font-family: 'Arial', sans-serif;
-    }
-    .sidebar .sidebar-content {
-        background-image: linear-gradient(#6f42c1, #7952b3);
-        color: white;
-    }
-    .sidebar .sidebar-content a {
-        color: white;
-    }
-    .sidebar .sidebar-content a:hover {
-        color: #d1d8e0;
-    }
-    .css-1aumxhk a {
-        color: #6f42c1;
-    }
-    .css-1aumxhk a:hover {
-        color: #7952b3;
-    }
-    .header-icon {
-        margin-right: 10px;
-    }
-    .section-header {
-        display: flex;
-        align-items: center;
-    }
-    .section-header img {
-        margin-right: 10px;
-    }
-    .profile-pic {
-        border-radius: 50%;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+
 # Set the title and description
 st.title('My Portfolio')
 st.write("""
