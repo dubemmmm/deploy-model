@@ -57,3 +57,29 @@ elif option == "Education":
     st.subheader("Bachelor of Science (B.Sc.), Computer Science")
     st.write("Covenant University, 2023 (1st Class, 4.79/5)")
 
+# Skills Section
+elif option == "Skills":
+    st.header("Technical and Soft Skills")
+    st.subheader("Technical Skills")
+    st.write("""
+    - Pytorch, Tensorflow, Scikit-learn
+    - Matplotlib, Pandas, Numpy
+    - Pytesseract, Pillow, OpenCV
+    - Django, Flask, HTML5, CSS3
+    - Python, JavaScript, C#, Flutter
+    - Hugging Face Transformers, NLTK
+    - Jupyter Notebook, Google Colab
+    """)
+    st.subheader("Soft Skills")
+    st.write("""
+    - Problem Solving
+    - Teamwork
+    - Leadership
+    - Time Management
+    - Analytical Thinking
+    - Self-Motivation
+    - Excellent Communication
+    - Flexibility and Adaptability
+    """)
+
+
