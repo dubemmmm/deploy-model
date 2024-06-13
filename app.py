@@ -51,4 +51,9 @@ elif option == "Work Experience":
     - Utilized software bots to automate banking processes.
     - Implemented Robotic Process Automation (RPA) for repetitive tasks.
     """)
+# Education Section
+elif option == "Education":
+    st.header("Education")
+    st.subheader("Bachelor of Science (B.Sc.), Computer Science")
+    st.write("Covenant University, 2023 (1st Class, 4.79/5)")
 
