@@ -82,4 +82,22 @@ elif option == "Skills":
     - Flexibility and Adaptability
     """)
 
+# Projects Section
+elif option == "Projects":
+    st.header("Projects")
+    
+    # Fetch the pinned repositories from GitHub API
+    username = "dubemmmm"
+    token = "your_personal_access_token"  # Replace with your GitHub Personal Access Token
+    url = f"https://api.github.com/users/{username}/repos"
+    headers = {"Authorization": f"token {token}"}
+    
+    response = requests.get(url, headers=headers)
+    repos = response.json()
+
+    for repo in repos:
+        if repo["pushed_at"]:  # Ensure the repo is not empty
+            st.subheader(repo["name"])
+            st.write(repo["description"])
+            st.markdown(f"[View Repository]({repo['html_url']})")
 
