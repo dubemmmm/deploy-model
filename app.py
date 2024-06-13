@@ -2,21 +2,7 @@ import streamlit as st
 import requests
 from streamlit_lottie import st_lottie
 
-# Function to load Lottie animations
-def load_lottieurl(url):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
 
-# Load icons
-icons = {
-    "home": load_lottieurl("https://assets3.lottiefiles.com/packages/lf20_0erqc7f7.json"),
-    "work": load_lottieurl("https://assets8.lottiefiles.com/packages/lf20_DMgKk1.json"),
-    "education": load_lottieurl("https://assets3.lottiefiles.com/packages/lf20_bXrNZP.json"),
-    "skills": load_lottieurl("https://assets9.lottiefiles.com/packages/lf20_OARbs9.json"),
-    "projects": load_lottieurl("https://assets7.lottiefiles.com/packages/lf20_HU0diTr.json")
-}
 
 # Custom CSS for styling
 st.markdown("""
