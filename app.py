@@ -12,7 +12,7 @@ option = st.sidebar.selectbox("Go to", ["Home", "Work Experience", "Education", 
 if option == "Home":
     st.header("Welcome")
     st.write("I am a motivated and dynamic individual driven by a result-oriented approach and a keen eagerness to learn.")
-    st.image("images/profile.jpg", width=300)  # Add your image here
+    st.image("IMG_3489.JPG", width=300)  # Add your image here
 
     st.write("## Connect with me")
     st.markdown("[LinkedIn](https://www.linkedin.com/in/chidubem-onwuchuluba-787414227/)")
