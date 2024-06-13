@@ -18,3 +18,37 @@ if option == "Home":
     st.markdown("[LinkedIn](https://www.linkedin.com/in/chidubem-onwuchuluba-787414227/)")
     st.markdown("[GitHub](https://github.com/dubemmmm)")
     st.markdown("[Email](mailto:onwuchulubachidubem@gmail.com)")
+# Work Experience Section
+elif option == "Work Experience":
+    st.header("Work Experience")
+
+    st.subheader("Data Science Intern (March 2024 – Present)")
+    st.write("Hamoye AI")
+    st.write("""
+    - Gained understanding of Generative Adversarial Networks (GANs).
+    - Optimized large language models (LLMs) through fine-tuning techniques.
+    - Developed foundational understanding of different generative models.
+    """)
+
+    st.subheader("Generative AI and Data Science Intern (Oct. 2023 – March 2024)")
+    st.write("Flexisaf Edusoft Ltd")
+    st.write("""
+    - Worked with GANs including DCGANs, CycleGANs, and StyleGANs.
+    - Executed complex computer vision tasks using Convolutional Neural Networks (CNN) and transfer learning.
+    - Utilized NLP and LSTM for sentiment analysis and text summarization.
+    """)
+
+    st.subheader("Networking Intern (July 2022 – Oct. 2022)")
+    st.write("Treten Networks")
+    st.write("""
+    - Collaborated with the IP security team to install routers, switches, and ODF in data centers.
+    - Troubleshot Cisco Meraki devices to improve functionality.
+    """)
+
+    st.subheader("Robotic Process Automation Intern (March 2022 – July 2022)")
+    st.write("Polaris Bank Limited")
+    st.write("""
+    - Utilized software bots to automate banking processes.
+    - Implemented Robotic Process Automation (RPA) for repetitive tasks.
+    """)
+
