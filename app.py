@@ -1,61 +1,39 @@
 import streamlit as st
 import requests
-from streamlit_lottie import st_lottie
-
-
-
-# Custom CSS for styling
-st.markdown("""
-    <style>
-    .main {
-        background-color: #f0f2f6;
-    }
-    .sidebar .sidebar-content {
-        background-image: linear-gradient(#6f42c1, #7952b3);
-        color: white;
-    }
-    .sidebar .sidebar-content a {
-        color: white;
-    }
-    .sidebar .sidebar-content a:hover {
-        color: #d1d8e0;
-    }
-    .css-1aumxhk a {
-        color: #6f42c1;
-    }
-    .css-1aumxhk a:hover {
-        color: #7952b3;
-    }
-    </style>
-    """, unsafe_allow_html=True)
 
 # Set the title and description
 st.title('My Portfolio')
 st.write("""
-Welcome to my professional portfolio. Here you can find information about my work experience, education, skills, and projects.
+I am a motivated and dynamic professional with a passion for
+artificial intelligence, deep learning, and generative AI. With a
+strong foundation in full-stack software development, particularly
+using the Django framework, I bring a comprehensive skill set to
+any project. My results-oriented approach and eagerness to learn
+drive me to excel in high-pressure situations and contribute to
+team success. By leveraging my expertise in AI and software
+development, I aim to extract valuable insights from complex
+data, fostering informed decision-making and delivering
+innovative solutions.
 """)
 
 # Add a sidebar with navigation
 st.sidebar.title("Navigation")
-st.sidebar.image("images/profile.jpg", width=150)
-option = st.sidebar.radio("Go to", ["Home", "Work Experience", "Education", "Skills", "Projects"])
+option = st.sidebar.selectbox("Go to", ["Home", "Work Experience", "Education", "Skills", "Projects"])
 
 # Home Section
 if option == "Home":
     st.header("Welcome")
-    st_lottie(icons["home"], height=200)
     st.write("I am a motivated and dynamic individual driven by a result-oriented approach and a keen eagerness to learn.")
-     # Add your image here
+    st.image("images/profile.jpg", width=300)  # Add your image here
 
     st.write("## Connect with me")
-    st.markdown("[![LinkedIn](https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/your-profile/)")
-    st.markdown("[![GitHub](https://img.shields.io/badge/-GitHub-black?style=flat&logo=github)](https://github.com/dubemmmm)")
-    st.markdown("[![Email](https://img.shields.io/badge/-Email-red?style=flat&logo=gmail)](mailto:your-email@example.com)")
+    st.markdown("[LinkedIn](https://www.linkedin.com/in/chidubem-onwuchuluba-787414227/)")
+    st.markdown("[GitHub](https://github.com/dubemmmm)")
+    st.markdown("[Email](mailto:onwuchulubachidubem@gmail.com)")
 
 # Work Experience Section
 elif option == "Work Experience":
     st.header("Work Experience")
-    st_lottie(icons["work"], height=200)
 
     st.subheader("Data Science Intern (March 2024 – Present)")
     st.write("Hamoye AI")
@@ -86,3 +64,61 @@ elif option == "Work Experience":
     - Utilized software bots to automate banking processes.
     - Implemented Robotic Process Automation (RPA) for repetitive tasks.
     """)
+
+# Education Section
+elif option == "Education":
+    st.header("Education")
+    st.subheader("Bachelor of Science (B.Sc.), Computer Science")
+    st.write("Covenant University, 2023 (1st Class, 4.79/5)")
+
+# Skills Section
+elif option == "Skills":
+    st.header("Technical and Soft Skills")
+    st.subheader("Technical Skills")
+    st.write("""
+    - Pytorch, Tensorflow, Scikit-learn
+    - Matplotlib, Pandas, Numpy
+    - Pytesseract, Pillow, OpenCV
+    - Django, Flask, HTML5, CSS3
+    - Python, JavaScript, C#, Flutter
+    - Hugging Face Transformers, NLTK
+    - Jupyter Notebook, Google Colab
+    """)
+    st.subheader("Soft Skills")
+    st.write("""
+    - Problem Solving
+    - Teamwork
+    - Leadership
+    - Time Management
+    - Analytical Thinking
+    - Self-Motivation
+    - Excellent Communication
+    - Flexibility and Adaptability
+    """)
+
+# Projects Section
+elif option == "Projects":
+    st.header("Projects")
+
+    # Fetch and display pinned GitHub projects
+    st.subheader("Pinned GitHub Projects")
+    GITHUB_USERNAME = "dubemmmm"
+    
+    def get_pinned_repos(username):
+        url = f"https://api.github.com/users/{username}/repos?per_page=6"
+        response = requests.get(url)
+        repos = response.json()
+        return repos
+
+    repos = get_pinned_repos(GITHUB_USERNAME)
+    for repo in repos:
+        st.markdown(f"### [{repo['name']}]({repo['html_url']})")
+        st.markdown(f"**Description**: {repo['description']}")
+        st.markdown(f"**Technologies Used**: {repo['language']}")
+        st.markdown("---")
+
+# Save the code in a file named `app.py` and run it using the command `streamlit run app.py`.
+
+# Ensure you have the following in your `requirements.txt`:
+# streamlit
+# requests
